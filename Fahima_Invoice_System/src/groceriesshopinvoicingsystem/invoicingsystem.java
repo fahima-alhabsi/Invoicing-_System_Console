@@ -114,7 +114,7 @@ public class invoicingsystem {
 //		        }
 		        
 		      
-		    	
+		    	ArrayList <Product> productList = new ArrayList<>();
 		        boolean Mainflag=true;
 		          Product productS = new Product();
 		        
@@ -154,11 +154,17 @@ public class invoicingsystem {
 		            productS.setQuantityAmount(productquantityAmount);
 		            scanner.nextLine();
 		            
+		            
+		            
+		            for(Product pro : productList) {
 		      String products = "insert into product values ("+productS.getID()+",'"+productS.getName()+
 		    		  "',"+productS.getUnitPrice()+","+productS.getQuantity()+","+productS.getQuantityAmount()+")";
 		      
 		      
 		      st.execute(products);
+		            }
+		            
+		            
 		      System.out.println("do you want to add new item ?");
 		      
 				if(scanner.nextLine().equals("yes")) {
